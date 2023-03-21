@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -12,18 +12,31 @@ export const GlobalStyle = createGlobalStyle`
 
 :focus {
     outline: 0;
-    box-shadow: 0 0 0 2px ${(props) => props.theme['green-500']}
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2)
   }
 
 
   body{
-    background-color: ${(props) => props.theme['gray-800']};
-    color: ${(props) => props.theme['gray-100']};
+    background-color: ${(props) => props.theme['base-background']};
+    color: ${(props) => props.theme['base-title']};
     -webkit-font-smoothing: antialiased;
   }
 
   body, input, textarea, button { 
-    font: 400 1rem Roboto, sans-serif;
+    font: 400 1rem 'Nunito', sans-serif;
   }
+
+
+
+`
+
+
+
+  
+export const MainContent  = styled.div`
+//display: flex;
+padding: 0 14rem;
+z-index: 20;
+position: relative; // para funcionar o z index
 
 `

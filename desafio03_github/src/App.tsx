@@ -1,5 +1,8 @@
 import { ThemeProvider } from "styled-components";
-import { GlobalStyle } from "./styles/global";
+import { Header } from "./components/Header";
+import { IssueCard } from "./components/IssueCard";
+import { MainTopCard } from "./components/MainTopCard";
+import { GlobalStyle, MainContent } from "./styles/global";
 import { defaultTheme } from "./styles/themes/default";
 
 
@@ -8,8 +11,16 @@ export function App() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-    <h1> App </h1>
+   
+    <Header/> 
+    <MainContent>
 
+    <MainTopCard/>
+
+    <IssueCard/>
+
+
+    </MainContent>
     <GlobalStyle />
     </ThemeProvider>
   )
