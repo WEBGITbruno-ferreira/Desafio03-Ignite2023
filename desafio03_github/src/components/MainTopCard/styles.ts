@@ -48,11 +48,21 @@ p {font-size: 1.5rem;
 export const IconsArea = styled.div`
   display: flex;
 
+  div{
+    display: flex;
+    margin-right: 20px;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+
+  }
+
 svg {
   padding: 2px;
   background-color: ${(props) => props.theme['base-label']};
   border-radius: 100px;
 
-  margin-right: 20px;
+
   }
 `

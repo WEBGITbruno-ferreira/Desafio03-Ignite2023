@@ -19,9 +19,9 @@ export function MainTopCard() {
           <p> Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat pulvinar vel mass.</p>
 
           <IconsArea><a href=''></a>  
-            <GithubLogo size={30} color="#0B1B2B" weight="fill" /> 
-            <Buildings size={30} color="#0B1B2B" weight="fill" /> 
-            <Users size={30} color="#0B1B2B" weight="fill" /> 
+           <div> <GithubLogo size={30} color="#0B1B2B" weight="fill" /> Cameron </div>
+           <div> <Buildings size={30} color="#0B1B2B" weight="fill" /> Rocket </div>
+           <div> <Users size={30} color="#0B1B2B" weight="fill" /> 32 Seguidores </div>
             </IconsArea>
         </TopCardContent>
     </MainTopCardContainer>
