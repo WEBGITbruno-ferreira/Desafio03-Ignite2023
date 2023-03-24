@@ -2,8 +2,15 @@
 import { IconsArea, MainTopCardContainer, NameAndLink, TopCardContent } from './styles'
 import avatar from '../../assets/avatar.png'
 import  {GithubLogo, Buildings, Users}from '@phosphor-icons/react'
+import { RepoIssuesContext } from '../../context/IssuesContext'
+import { useContext } from 'react'
 
 export function MainTopCard() {
+
+  const {repo} = useContext(RepoIssuesContext)
+
+  console.log(repo)
+
   return (
 
     <MainTopCardContainer>
