@@ -1,6 +1,13 @@
+import { useContext } from "react";
+import { RepoIssuesContext } from "../../context/IssuesContext";
 import { DivtextIssue, IssueCardContainer, IssueCardContent } from "./styles";
 
 export function IssueCard() {
+  const {issues} = useContext(RepoIssuesContext)
+  console.log('issues', issues)
+
+
+
   return (
 
     <IssueCardContainer>

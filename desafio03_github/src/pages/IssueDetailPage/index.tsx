@@ -1,5 +1,5 @@
 
-import { IssueDetail } from "../../IssueDetail";
+import { IssueDetail } from "../../components/IssueDetail";
 import { MainContent } from "../../styles/global";
 
 export function IssueDetailPage() {

@@ -3,13 +3,12 @@ import { IconsArea, MainTopCardContainer, NameAndLink, TopCardContent } from './
 import avatar from '../../assets/avatar.png'
 import  {GithubLogo, Buildings, Users}from '@phosphor-icons/react'
 import { RepoIssuesContext } from '../../context/IssuesContext'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 
 export function MainTopCard() {
-
   const {repo} = useContext(RepoIssuesContext)
-
   console.log(repo)
+
 
   return (
 
@@ -18,17 +17,18 @@ export function MainTopCard() {
         <TopCardContent> 
 
           <NameAndLink>
-            <p>Cameron</p>
+            <p>{repo.name}</p>
             <a href="">Github</a>
 
           </NameAndLink>
 
-          <p> Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat pulvinar vel mass.</p>
+          <p> {repo.bio ? repo.bio : 'Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat pulvinar vel mass.' }
+          </p>
 
           <IconsArea><a href=''></a>  
-           <div> <GithubLogo size={30} color="#0B1B2B" weight="fill" /> Cameron </div>
-           <div> <Buildings size={30} color="#0B1B2B" weight="fill" /> Rocket </div>
-           <div> <Users size={30} color="#0B1B2B" weight="fill" /> 32 Seguidores </div>
+           <div> <GithubLogo size={30} color="#0B1B2B" weight="fill" /> {repo.name} </div>
+           <div> <Buildings size={30} color="#0B1B2B" weight="fill" /> {repo.company ? repo.company : 'BR Tech DevSolution'} </div>
+           <div> <Users size={30} color="#0B1B2B" weight="fill" /> {repo.followers} Seguidor {repo.followers > '1' ? 'es' : ''} </div>
             </IconsArea>
         </TopCardContent>
     </MainTopCardContainer>

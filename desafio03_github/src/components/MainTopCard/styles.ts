@@ -8,6 +8,7 @@ export const MainTopCardContainer = styled.div`
   border-radius: 10px;
   padding: 2rem 2rem;
   margin: -100px 0 0 0;
+  max-height: 20rem;
 
 
   
@@ -17,9 +18,8 @@ export const MainTopCardContainer = styled.div`
 
 export const TopCardContent = styled.div`
 display: flex;
-flex-direction:column;
-justify-content: space-between;
-align-self: stretch;
+flex-direction: column;
+
 width: 100%;
 line-height: 150%;
 padding: 10px 15px 0px 15px;

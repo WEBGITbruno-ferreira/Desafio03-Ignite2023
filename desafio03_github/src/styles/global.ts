@@ -2,6 +2,11 @@ import styled, { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
 
+
+html{
+  font-size: 16px;
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -20,6 +25,9 @@ export const GlobalStyle = createGlobalStyle`
     background-color: ${(props) => props.theme['base-background']};
     color: ${(props) => props.theme['base-title']};
     -webkit-font-smoothing: antialiased;
+    
+
+
   }
 
   body, input, textarea, button { 
@@ -35,8 +43,9 @@ export const GlobalStyle = createGlobalStyle`
   
 export const MainContent  = styled.div`
 //display: flex;
-padding: 0 14rem;
+padding: 0 5vw;
 z-index: 20;
 position: relative; // para funcionar o z index
+margin: 0 auto;
 
 `
