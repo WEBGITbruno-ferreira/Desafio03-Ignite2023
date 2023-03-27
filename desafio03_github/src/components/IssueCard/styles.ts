@@ -1,5 +1,6 @@
 
 
+import { MouseEventHandler } from 'react';
 import styled from 'styled-components'
 
 export const IssueCardContainer = styled.div`
@@ -13,19 +14,33 @@ export const IssueCardContainer = styled.div`
   overflow: hidden;
 
 
+
+
+
+
 `
 
-export const IssueCardContent = styled.div`
+interface CardProps {
+  onClick : MouseEventHandler<HTMLDivElement>;
+}
+
+export const IssueCardContent = styled.div<CardProps>`
   display: grid;
   grid-template-columns: 80% 20%;
   grid-template-rows:3.75rem 1fr;
-  
+ 
   background-color: ${(props) => props.theme['base-post']};
   border-radius: 10px;
   padding: 2rem 2rem;
   margin-top: 10px;
   line-height:200%;
   overflow: hidden;
+
+  :hover{
+    cursor: pointer;
+    
+  }
+
 
 
   

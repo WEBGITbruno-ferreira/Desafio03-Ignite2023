@@ -3,7 +3,7 @@ import { ThemeProvider } from "styled-components";
 
 import { RepoIssuesProvider } from "./context/IssuesContext";
 
-import { Router } from "./Router";
+import { MyRouter } from "./Router";
 import { GlobalStyle, MainContent } from "./styles/global";
 import { defaultTheme } from "./styles/themes/default";
 
@@ -13,13 +13,18 @@ export function App() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-    <BrowserRouter> 
-    <RepoIssuesProvider>
-    <Router />
-    </RepoIssuesProvider>
 
-    <GlobalStyle />
-    </BrowserRouter>
+        <RepoIssuesProvider>
+          
+        <BrowserRouter>
+          <MyRouter />
+        </BrowserRouter>
+
+        </RepoIssuesProvider>
+    
+
+      <GlobalStyle />
+
     </ThemeProvider>
   )
 }

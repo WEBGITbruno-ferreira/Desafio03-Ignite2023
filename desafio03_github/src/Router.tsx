@@ -6,14 +6,18 @@ import { IssueDetailPage } from './pages/IssueDetailPage'
 //import { OrderComplete } from './pages/OrderComplete'
 
 
-export function Router() {
+export function MyRouter() {
   return (
     <Routes>
       <Route path="/" element={<DefaultLayout />}>
-        <Route path="/" element={<HomePage />}></Route>
-       <Route path="/issuedetail" element={<IssueDetailPage />}></Route> 
-       {/*  <Route path="/ordercomplete" element={<OrderComplete />}></Route> */} 
+        <Route  path="/" element={<HomePage />}></Route>
+        <Route  path="/issuedetail" element={<IssueDetailPage  /> }></Route> 
       </Route>
+
+     
+      
+
+     
     </Routes>
   )
 }

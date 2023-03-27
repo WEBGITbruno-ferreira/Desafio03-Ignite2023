@@ -1,7 +1,7 @@
 
 import { IconsArea, MainTopCardContainer, NameAndLink, TopCardContent } from './styles'
 import avatar from '../../assets/avatar.png'
-import  {GithubLogo, Buildings, Users}from '@phosphor-icons/react'
+import  {GithubLogo, Buildings, Users, ArrowSquareUpRight}from '@phosphor-icons/react'
 import { RepoIssuesContext } from '../../context/IssuesContext'
 import { useContext, useEffect } from 'react'
 
@@ -18,7 +18,7 @@ export function MainTopCard() {
 
           <NameAndLink>
             <p>{repo.name}</p>
-            <a href="">Github</a>
+            <a href={repo.html_url}>VER NO GITHUB  <ArrowSquareUpRight size={20} color="#3294F8"  /> </a>
 
           </NameAndLink>
 

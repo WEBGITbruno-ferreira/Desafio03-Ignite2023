@@ -1,47 +1,55 @@
 import { useContext } from "react";
 import { RepoIssuesContext } from "../../context/IssuesContext";
 import { DivtextIssue, IssueCardContainer, IssueCardContent } from "./styles";
+import { formatDistanceToNow } from 'date-fns'
+import ptBR from 'date-fns/locale/pt-BR'
+import { useNavigate  } from "react-router-dom";
+
+
 
 export function IssueCard() {
-  const {issues} = useContext(RepoIssuesContext)
-  console.log('issues', issues)
+  const { issues } = useContext(RepoIssuesContext)
 
+
+  const navigate = useNavigate();
+
+
+  function handleClick(numberIssue : string) {
+
+    let  issueMatch = issues.filter((issue)=> issue.number === numberIssue) 
+
+    return  navigate(`/issuedetail?number=${numberIssue}`, { state : {issueMatch}});
+
+  } 
 
 
   return (
 
-    <IssueCardContainer>
-        <IssueCardContent>
-          <h4> JavaScript data types and data structures  </h4>
-          <span> 1 dia</span>
+    <IssueCardContainer >
 
-          <DivtextIssue>
-          <p> Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in JavaScript and what properties they have. These can be used to build other data structures. Wherever possible, comparisons with other languages are drawn.
-          </p>
+
+      {issues.map((issue) => (
+
+        <IssueCardContent key={issue.id} onClick={()=>handleClick(issue.number)}>
+          <h4> {issue.title} </h4>
+          <span> {formatDistanceToNow(new Date(issue.createdAt),
+
+            {
+              addSuffix: true,
+              locale: ptBR,
+            }
+
+
+
+          )} </span>
+          <DivtextIssue key={issue.id}>
+
+
+            <p>{issue.body.substring(1,200).concat((issue.body.length > 200) ? '...' : '' )}</p>
           </DivtextIssue>
-        
         </IssueCardContent>
-        <IssueCardContent>
-          <h4> JavaScript data types and data structures  </h4>
-          <span> 1 dia</span>
-
-          <DivtextIssue>
-          <p> Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in JavaScript and what properties they have. These can be used to build other data structures. Wherever possible, comparisons with other languages are drawn.
-          </p>
-          </DivtextIssue>
-        
-        </IssueCardContent>
-
-        <IssueCardContent>
-          <h4> JavaScript data types and data structures  </h4>
-          <span> 1 dia</span>
-
-          <DivtextIssue>
-          <p> Programming languages all have built-in
-          </p>
-          </DivtextIssue>
-        
-        </IssueCardContent>
+      ))}
+ 
     </IssueCardContainer>
   )
 }

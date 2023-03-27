@@ -41,6 +41,18 @@ p {font-size: 1.5rem;
   
   }
 
+  svg{
+    margin-bottom: -5px;    
+  }
+
+  a{
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    color: #3294F8;
+  } 
+  
+
 `
 
 
