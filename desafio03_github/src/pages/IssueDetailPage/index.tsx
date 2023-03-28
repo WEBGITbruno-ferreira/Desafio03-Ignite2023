@@ -2,19 +2,17 @@
 import { ArrowSquareUpRight, CalendarBlank, CaretLeft, ChatCircle, GithubLogo } from "@phosphor-icons/react";
 import { IconsArea, IssueDescription, IssueDetailContainer, IssueTitle, IssueTopCardContainer, LinksSpacer } from "./styles";
 import { MainContent } from "../../styles/global";
-import { useContext, useEffect, useState } from "react";
-import { RepoIssuesContext } from "../../context/IssuesContext";
-import {  useLocation, useNavigate } from "react-router-dom";
 
-
-
+import {  useLocation } from "react-router-dom";
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
 
 
 export function IssueDetailPage() {
   
 
-  const navigate = useNavigate();
+  const markdown = `Just a link: https://reactjs.com.`
 
   const loc = useLocation()
   console.log(loc)
@@ -49,9 +47,9 @@ if (loc.state !== null) {
 
 <IssueDescription>
 
-  <p>
-    {loc.state.issueMatch[0].body}
-  </p>
+
+<ReactMarkdown  children={loc.state.issueMatch[0].body} remarkPlugins={[remarkGfm]} /> 
+
 </IssueDescription>
 
 </IssueDetailContainer>

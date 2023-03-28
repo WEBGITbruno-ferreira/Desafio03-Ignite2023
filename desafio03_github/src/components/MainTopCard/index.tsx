@@ -1,5 +1,5 @@
 
-import { IconsArea, MainTopCardContainer, NameAndLink, TopCardContent } from './styles'
+import {  IconsArea, MainTopCardContainer, NameAndLink, TopCardContent } from './styles'
 import avatar from '../../assets/avatar.png'
 import  {GithubLogo, Buildings, Users, ArrowSquareUpRight}from '@phosphor-icons/react'
 import { RepoIssuesContext } from '../../context/IssuesContext'
@@ -13,7 +13,9 @@ export function MainTopCard() {
   return (
 
     <MainTopCardContainer>
-        <img src={avatar} alt="" />
+      
+        <img src={repo.avatar_url} alt="" />
+      
         <TopCardContent> 
 
           <NameAndLink>

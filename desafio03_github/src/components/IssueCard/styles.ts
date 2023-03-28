@@ -53,7 +53,7 @@ export const DivtextIssue = styled.div`
 display: flex;
 grid-column: span 2;
 line-height:150%;
-padding-top: 1rem;
+padding: 1rem 0;
 align-items: top;
 
 

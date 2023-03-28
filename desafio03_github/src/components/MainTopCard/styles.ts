@@ -10,11 +10,17 @@ export const MainTopCardContainer = styled.div`
   margin: -100px 0 0 0;
   max-height: 20rem;
 
+  img{ max-width: 148px;
+      max-height: 148px;
+      border-radius: 10%;
 
+  }
   
 
 
 `
+
+
 
 export const TopCardContent = styled.div`
 display: flex;

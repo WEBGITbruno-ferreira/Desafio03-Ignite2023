@@ -25,6 +25,7 @@ html{
     background-color: ${(props) => props.theme['base-background']};
     color: ${(props) => props.theme['base-title']};
     -webkit-font-smoothing: antialiased;
+    min-width:  680px;
     
 
 

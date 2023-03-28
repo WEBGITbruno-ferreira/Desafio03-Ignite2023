@@ -4,6 +4,8 @@ import { DivtextIssue, IssueCardContainer, IssueCardContent } from "./styles";
 import { formatDistanceToNow } from 'date-fns'
 import ptBR from 'date-fns/locale/pt-BR'
 import { useNavigate  } from "react-router-dom";
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
 
 
@@ -44,8 +46,9 @@ export function IssueCard() {
           )} </span>
           <DivtextIssue key={issue.id}>
 
+          <ReactMarkdown  children={issue.body.substring(1,120).concat((issue.body.length > 120) ? '...' : '' )} remarkPlugins={[remarkGfm]} /> 
 
-            <p>{issue.body.substring(1,200).concat((issue.body.length > 200) ? '...' : '' )}</p>
+          
           </DivtextIssue>
         </IssueCardContent>
       ))}

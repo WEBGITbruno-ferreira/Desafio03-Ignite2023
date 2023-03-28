@@ -17,5 +17,7 @@ export const HeaderContent = styled.div`
 
 
   img{ width: 100%;
+       min-height: 218px;
+       
      }
 `
